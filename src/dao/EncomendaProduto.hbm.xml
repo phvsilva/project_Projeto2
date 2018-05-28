@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/mai/2018 15:27:12 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dao.EncomendaProduto" table="encomenda_produto" catalog="bd_projeto" optimistic-lock="version">
+        <composite-id name="id" class="dao.EncomendaProdutoId">
+            <key-property name="idencomenda" type="int">
+                <column name="IDENCOMENDA" />
+            </key-property>
+            <key-property name="idproduto" type="int">
+                <column name="IDPRODUTO" />
+            </key-property>
+            <key-property name="linhaencomenda" type="long">
+                <column name="LINHAENCOMENDA" precision="10" scale="0" />
+            </key-property>
+        </composite-id>
+        <property name="idfornecedor" type="int">
+            <column name="IDFORNECEDOR" not-null="true" />
+        </property>
+        <property name="quantidade" type="short">
+            <column name="QUANTIDADE" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="vlrunit" type="big_decimal">
+            <column name="VLRUNIT" precision="5" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

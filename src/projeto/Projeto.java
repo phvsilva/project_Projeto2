@@ -5,11 +5,15 @@
  */
 package projeto;
 
+import Hibernate.HibernateUtil;
+import dao.Cliente;
+import java.util.List;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.hibernate.Session;
 
 /**
  *
@@ -25,6 +29,14 @@ public class Projeto extends Application {
         
         stage.setScene(scene);
         stage.show();
+        
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        
+        List<Cliente> ListaClientes = session.createCriteria(Cliente.class).list();
+        for (Cliente cliente : ListaClientes) {
+                System.out.println(cliente.getNome());
+        }
+        session.close();
     }
 
     /**

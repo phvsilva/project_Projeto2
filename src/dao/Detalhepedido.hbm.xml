@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/mai/2018 15:27:12 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dao.Detalhepedido" table="detalhepedido" catalog="bd_projeto" optimistic-lock="version">
+        <id name="nlinha" type="long">
+            <column name="NLINHA" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="codpedido" type="int">
+            <column name="CODPEDIDO" not-null="true" />
+        </property>
+        <property name="idproduto" type="int">
+            <column name="IDPRODUTO" not-null="true" />
+        </property>
+        <property name="qtd" type="java.lang.Long">
+            <column name="QTD" precision="10" scale="0" />
+        </property>
+        <property name="vlrunit" type="big_decimal">
+            <column name="VLRUNIT" precision="5" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/mai/2018 15:27:12 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dao.Cliente" table="cliente" catalog="bd_projeto" optimistic-lock="version">
+        <id name="idcliente" type="int">
+            <column name="IDCLIENTE" />
+            <generator class="assigned" />
+        </id>
+        <property name="nome" type="string">
+            <column name="NOME" length="50" not-null="true" />
+        </property>
+        <property name="morada" type="string">
+            <column name="MORADA" length="30" not-null="true" />
+        </property>
+        <property name="contacto" type="int">
+            <column name="CONTACTO" precision="9" scale="0" not-null="true" />
+        </property>
+        <property name="nif" type="int">
+            <column name="NIF" precision="9" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

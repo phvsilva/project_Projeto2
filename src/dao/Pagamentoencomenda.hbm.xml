@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/mai/2018 15:27:12 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dao.Pagamentoencomenda" table="pagamentoencomenda" catalog="bd_projeto" optimistic-lock="version">
+        <composite-id name="id" class="dao.PagamentoencomendaId">
+            <key-property name="idencomenda" type="int">
+                <column name="IDENCOMENDA" />
+            </key-property>
+            <key-property name="idgestor" type="int">
+                <column name="IDGESTOR" />
+            </key-property>
+        </composite-id>
+        <property name="valor" type="big_decimal">
+            <column name="VALOR" precision="5" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
